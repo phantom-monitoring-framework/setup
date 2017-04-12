@@ -24,6 +24,7 @@ cd phantom_monitoring_client
 In the configure file make sure that the **server** url is setup correctly. By default infrastructure monitoring, the **application_id** is **infrastructure**, the **platform_id** is used as the default **task_id**.
 
 Please find in the following link the dependencies for each plug-in. Make sure that the hardware is available for using the specific plug-in.
+
 https://github.com/phantom-monitoring-framework/phantom_monitoring_client/blob/master/src/plugins/README.md
 
 Please follow the commands below for configure and build:
@@ -39,8 +40,10 @@ make install
 replace the **:application_id** and **:task_id** by the ones in your case.
 ```
 curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_mf/workflows/**:application_id** -d '{"application":"**:application_id**","author":"Random Guy","optimization":"Time","tasks":[{"name":":"**:task_id**","exec":"mf_client","cores_nr": "1"}]}'
-by default infrastructure monitoring, the **applicaiton_id = infrastructure**, **task_id = platform_id (configured in mf_config.ini)**
 ```
+
+by default infrastructure monitoring, the **applicaiton_id = infrastructure**, **task_id = platform_id (configured in mf_config.ini)**
+
 
 ## 6. configure for the specific platform the required parameters
 replace the **:platform_id** by the one in your case.
