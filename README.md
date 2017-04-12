@@ -24,6 +24,7 @@ cd phantom_monitoring_client
 In the configure file make sure that the **server** url is setup correctly. By default infrastructure monitoring, the **application_id** is **infrastructure**, the **platform_id** is used as the default **task_id**.
 
 Please find in the following link the dependencies for each plug-in. Make sure that the hardware is available for using the specific plug-in.
+https://github.com/phantom-monitoring-framework/phantom_monitoring_client/blob/master/src/plugins/README.md
 
 Please follow the commands below for configure and build:
 ```
