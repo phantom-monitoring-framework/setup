@@ -1,4 +1,6 @@
 # Setup Commands
+> Infrastructure-level monitoring
+
 ## 1. server setup
 ```
 git clone https://github.com/hpcfapix/phantom_monitoring_server.git
