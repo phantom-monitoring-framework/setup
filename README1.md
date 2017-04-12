@@ -23,7 +23,7 @@ cd phantom_monitoring_client
 
 ```
 ## 4. client configure and build
-In the configure file make sure that the **server** url is setup correctly. By default infrastructure monitoring, the **application_id** is **infrastructure**, the **platform_id** is used as the default **task_id**.
+In the configure file make sure that the **server** url is setup correctly. By default infrastructure monitoring, the **:application_id** is **infrastructure**.
 
 Please find in the following link the dependencies for each plug-in. Make sure that the hardware is available for using the specific plug-in.
 
@@ -40,18 +40,17 @@ make install
 
 ## 5. register the application by the server
 replace the **:platform_id** by the one in your case.
-```
-curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_mf/workflows/infrastructure -d '{"application":"infrastructure","author":"Random Guy","optimization":"Time","tasks":[{"name":":":platform_id","exec":"mf_client","cores_nr": "1"}]}'
-```
 
-by default infrastructure monitoring, the **platform_id = platform_id (configured in mf_config.ini)**
+curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_mf/workflows/infrastructure -d '{"application":"infrastructure","author":"Random Guy","optimization":"Time","tasks":[{"name":":"**:platform_id**","exec":"mf_client","cores_nr": "1"}]}'
+
+by default infrastructure monitoring, the **:platform_id** is given in `src/mf_config.ini`.
 
 
 ## 6. configure for the specific platform the required parameters
 replace the **:platform_id** by the one in your case.
-```
-curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_rm/configs/:platform_id -d '{"parameters":{"MAX_CPU_POWER":"24.5","MIN_CPU_POWER":"6.0","MEMORY_POWER":"2.016","L2CACHE_MISS_LATENCY":"59.80","L2CACHE_LINE_SIZE":"128","E_DISK_R_PER_KB":"0.0556","E_DISK_W_PER_KB":"0.0438","E_NET_SND_PER_KB":"0.14256387","E_NET_RCV_PER_KB":"0.24133936"}}'
-```
+
+curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_rm/configs/**:platform_id** -d '{"parameters":{"MAX_CPU_POWER":"24.5","MIN_CPU_POWER":"6.0","MEMORY_POWER":"2.016","L2CACHE_MISS_LATENCY":"59.80","L2CACHE_LINE_SIZE":"128","E_DISK_R_PER_KB":"0.0556","E_DISK_W_PER_KB":"0.0438","E_NET_SND_PER_KB":"0.14256387","E_NET_RCV_PER_KB":"0.24133936"}}'
+
 
 ## 7. start the monitoring client
 ```
