@@ -23,6 +23,9 @@ cd phantom_monitoring_client
 
 ```
 ## 4. client configure and build
+
+Define the **unique name** of the monitored platform and provide it as platform_id option in the config file .src/mf_config.ini.
+
 In the configure file make sure that the **server** url is setup correctly. By default infrastructure monitoring, the **:application_id** is **infrastructure**.
 
 Please find in the following link the dependencies for each plug-in. Make sure that the hardware is available for using the specific plug-in.
