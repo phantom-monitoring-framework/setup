@@ -65,6 +65,23 @@ sudo ./start.sh
 ```
 sudo cat phantom_monitoring_client/dist/bin/log/xxx
 ```
+or alternatively by querying the experiment list:
+```
+curl -XGET localhost:3033/v1/phantom_mf/experiments
+```
+
 
 ## 9. use these IDs to query the metrics
 details in: https://github.com/phantom-monitoring-framework/phantom_monitoring_server/blob/master/README.md
+
+**cpu usage:**
+```
+curl -XGET 'localhost:3033/v1/phantom_mf/statistics/infrastructure/excess_node01/AVtmz-r3arTJxoIfKFpP?metric=CPU_usage_rate&from=2017-04-13T12:17:00.000&to=2017-04-13T12:18:00.000'
+```
+
+**energy consumption:**
+```
+curl -XGET 'localhost:3033/v1/phantom_mf/statistics/infrastructure/excess_node01/AVtmz-r3arTJxoIfKFpP?metric=device0:power&from=2017-04-13T12:17:00.000&to=2017-04-13T12:18:00.000'
+```
+
+
