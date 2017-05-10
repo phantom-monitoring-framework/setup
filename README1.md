@@ -44,7 +44,7 @@ make install
 ## 5. register the application by the server
 replace the **:platform_id** by the one in your case.
 
-curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_mf/workflows/infrastructure -d '{"application":"infrastructure","author":"Random Guy","optimization":"Time","tasks":[{"name":":"**:platform_id**","exec":"mf_client","cores_nr": "1"}]}'
+curl -H "Content-Type: application/json" -XPUT localhost:3033/v1/phantom_mf/workflows/infrastructure -d '{"application":"infrastructure","author":"Random Guy","optimization":"Time","tasks":[{"name":"**:platform_id**","exec":"mf_client","cores_nr": "1"}]}'
 
 by default infrastructure monitoring, the **:platform_id** is given in `src/mf_config.ini`.
 
